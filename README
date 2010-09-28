@@ -1,0 +1,35 @@
+ocropy is a minimal wrapper around the optical character recognition software
+ocropus [1] for doing quick and dirty OCR jobs. It converts TIFF, JPEG and 
+PNG images to grayscale before attempting to do the ocr, and internally 
+handles some temporary files for you.
+
+Usage:
+
+  import ocropy
+  hocr = ocropy.hocr("image.png")
+
+If you would like to further process the image, and don't want to go through
+the effort of reading it again you can get the PIL Image object that was 
+used to convert the image to grayscale:
+
+  hocr, image = hocr_with_image("page.png")
+
+And you can pass it a URL for an image if that's more convenient:
+
+  hocr = ocropy.hocr("http://example.com/image.tif")
+
+
+Requirements:
+
+* ocropus (available to ubuntu systems w/ apt-get)
+* PIL
+
+
+License:
+
+Public Domain <http://creativecommons.org/licenses/publicdomain/>
+
+
+Contributors:
+
+Ed Summers <ehs@pobox.com>
