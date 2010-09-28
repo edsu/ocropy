@@ -1,9 +1,9 @@
 import sys
 import distutils.core
 
-import hocr 
+import ocropy
 
-if not uruk.ocropus_installed:
+if not ocropy.ocropus_installed:
     print "please install ocropus first: e.g. apt-get install ocropus"
     sys.exit()
 
